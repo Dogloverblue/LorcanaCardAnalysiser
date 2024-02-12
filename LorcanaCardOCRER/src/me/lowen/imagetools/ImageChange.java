@@ -4,17 +4,12 @@ import java.awt.image.BufferedImage;
 
 public abstract class ImageChange {
 	
-	BufferedImage img;
 	
-	public ImageChange(BufferedImage inputImage) {
-		img = inputImage;
+	public ImageChange() {
 		
 	}
 	
-	public abstract boolean applyChanges();
+	public abstract boolean applyChanges(BufferedImage img);
 	
-	public BufferedImage getImage() {
-		return img;
-	}
 
 }

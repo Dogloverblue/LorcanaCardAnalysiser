@@ -1,20 +1,23 @@
-package me.lowen.imagetools;
+package me.lowen.imagechanges;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
-public class ReplaceDarkColorsWithRed3 extends ImageChange {
+import me.lowen.imagetools.ColorUtils;
+import me.lowen.imagetools.ImageChange;
 
-	public ReplaceDarkColorsWithRed3(BufferedImage inputImage) {
-		super(inputImage);
+public class MakePowerReadable extends ImageChange {
+
+	public MakePowerReadable() {
+		super();
 	}
 
 	
 	
 	@Override
-	public boolean applyChanges() {
+	public boolean applyChanges(BufferedImage img) {
 		BufferedImage subImg =copyImage(img.getSubimage(1100, 1150, 85, 90));
 		for (int width = 0; width < subImg.getWidth() -1; width++) {
 			for (int height = 0; height < subImg.getHeight() -1; height++) {

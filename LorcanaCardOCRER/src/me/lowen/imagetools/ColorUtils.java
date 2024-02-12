@@ -20,5 +20,15 @@ public class ColorUtils {
 	public static boolean isColorDark(Color clr) {
 		return (getColorBrightness(clr) < 100);
 	}
+	
+	public static boolean areColorsClose(Color a, Color z, int threshold) {
+	    int r = (int)a.getRed() - z.getRed(),
+	    		
+	        g = (int)a.getGreen() - z.getGreen(),
+	        b = (int)a.getBlue() - z.getBlue();
+	    
+	    return (r*r + g*g + b*b) <= threshold*threshold;
+	}
+
 
 }

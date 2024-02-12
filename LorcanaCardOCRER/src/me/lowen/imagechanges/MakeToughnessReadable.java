@@ -1,20 +1,23 @@
-package me.lowen.imagetools;
+package me.lowen.imagechanges;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
-public class ReplaceLightColorsWithRed extends ImageChange {
+import me.lowen.imagetools.ColorUtils;
+import me.lowen.imagetools.ImageChange;
 
-	public ReplaceLightColorsWithRed(BufferedImage inputImage) {
-		super(inputImage);
+public class MakeToughnessReadable extends ImageChange {
+
+	public MakeToughnessReadable() {
+		super();
 	}
 
 	
 	
 	@Override
-	public boolean applyChanges() {
+	public boolean applyChanges(BufferedImage img) {
 		BufferedImage subImg =copyImage(img.getSubimage(1270, 1140, 100, 105));
 		for (int width = 0; width < subImg.getWidth() -1; width++) {
 			for (int height = 0; height < subImg.getHeight() -1; height++) {
